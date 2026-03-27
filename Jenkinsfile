@@ -47,7 +47,7 @@ except Exception as e:
         stage('5. Almacenamiento de artefactos') {
             steps {
                 echo "Guardando resultados..."
-                archiveArtifacts artifacts: '**/*.png, **/*.csv, **/*.txt', allowEmptyArchive: true
+                archiveArtifacts artifacts: '**/*.png, **/*.csv, **/*.txt', excludes: 'requirements.txt', allowEmptyArchive: true
             }
         }
     }
